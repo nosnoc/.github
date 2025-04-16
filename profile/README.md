@@ -1,12 +1,12 @@
 # Welcome to `nosnoc`
 The `nosnoc` organization focuses on nonsmooth optimization, with a primary focus on optimal control of nonsmooth dynamical systems.
-We also maintain several tailored solver for solving optimization with complementarity constraints.
+We also maintain several tailored solvers for solving optimization with complementarity constraints.
 
 ## Packages
 We currently maintain the following packages:
-- `nosnoc`: The namesake project. It contains tools for modeling and solving optimal control problems whose dynamics have a discontinous right hand side:
+- `nosnoc`: The namesake project. It contains tools for modeling and solving optimal control problems with hybrid systems, including:
   - Piecewise Smooth Systems: Systems whose dynamics exhibit state based switches in dynamics. We support primarily Filippov systems but also more generically systems with Heaviside step functions on the right hand side.
-  - Complementarity Lagrangian Systems: Complementarity based formulations of rigid body dynamics, both in 2d and 3d.
+  - Complementarity Lagrangian Systems: Complementarity based formulations of rigid body dynamics, both in 2D and 3D.
   - Constrained Dynamical Systems: Systems whose dynamics are constrained to a (possibly time-varying) set in the full statespace. These include Projected Dynamical Systems and their variants, as well as First-order Moreau Sweeping Processes.
   
   This package is written in Matlab using `CasADi` for modeling and automatic differentiation.
@@ -15,6 +15,7 @@ We currently maintain the following packages:
   It contains only some of the features of the Matlab package.
   If you want to use some features which are not currently implemented feel free to reach out to the authors via github issues or via email.
 - `mpecopt`: A Matlab implementation of an active set solver for MPCCs.
-  It is globally convergent to B-stationary points which are "true" local minima of MPCCs.
+  It is globally convergent to B-stationary points which are "true" local minima of MPCCs and unlike other stationarity concepts, do not permit first order descent directions.
 - `LCQPow`: A sequential convex programming approach for solving Quadratic Programs with linear complementarity constraints.
 - `nosbench`: A benchmark suite of MPCCs arising from nonsmooth optimal control and simulation solvers.
+- `vdx`: A Matlab software package for the efficient construction and index tracking for structured optimization problems. It supports both standard nonlinear programs and MPCCs and builds and orders the casadi expressions by semantic indices.
